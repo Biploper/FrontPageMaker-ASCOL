@@ -14,17 +14,18 @@ const FormField = ({ formData, setFormData, handleGenerate }) => {
 
     // Basic validation
     if (
-      !formData.projectName ||
-      !formData.subject ||
-      !formData.className ||
-      !formData.section ||
-      !formData.submittedTo
-    ) {
-      toast.error("Please fill all project and academic details!", {
-        position: "top-center",
-      });
-      return;
-    }
+  !formData.projectName ||
+  !formData.subject ||
+  !formData.courseName ||
+  !formData.sem ||
+  !formData.section ||
+  !formData.submittedTo
+) {
+  toast.error("Please fill all project and academic details!", {
+    position: "top-center",
+  });
+  return;
+}
 
     for (let i = 0; i < formData.memberDetails.length; i++) {
       const member = formData.memberDetails[i];
@@ -55,64 +56,107 @@ const FormField = ({ formData, setFormData, handleGenerate }) => {
             Edit Front Page
           </h2>
 
-          {/* Header */}
-          <div className="mb-6">
-            <h2 className="text-2xl font-semibold text-gray-800">
-              Project Details
-            </h2>
-            <p className="text-sm text-gray-500 mt-1">
-              Fill in the information to generate your front page
-            </p>
-          </div>
+          
 
-          {/* Project Name */}
-          <div className="mb-5">
-            <label className="block text-sm font-medium text-gray-700 mb-1">
-              Project Name
-            </label>
-            <input
-              type="text"
-              value={formData.projectName}
-              onChange={(e) => updateField("projectName", e.target.value)}
-              placeholder="Enter your project title"
-              className="w-full rounded-lg border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-black"
-            />
-          </div>
+         
+{/* Project and Academic Details */}
+<div className="mb-6">
+  <h2 className="text-2xl font-semibold text-gray-800">
+    Project Details
+  </h2>
+  <p className="text-sm text-gray-500 mt-1">
+    Enter your project and academic information to generate your front page.
+  </p>
+</div>
 
-          {/* Academic Details */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-            <input
-              type="text"
-              value={formData.subject}
-              onChange={(e) => updateField("subject", e.target.value)}
-              placeholder="Subject (e.g. Physics)"
-              className="rounded-lg border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-black"
-            />
+<div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
 
-            <input
-              type="text"
-              value={formData.className}
-              onChange={(e) => updateField("className", e.target.value)}
-              placeholder="Class (e.g. XI or XII)"
-              className="rounded-lg border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-black"
-            />
+  {/* Project Title */}
+  <div className="md:col-span-2">
+    <label className="block text-sm font-medium text-gray-700 mb-1">
+      Project Title
+    </label>
+    <input
+      type="text"
+      value={formData.projectName}
+      onChange={(e) => updateField("projectName", e.target.value)}
+      placeholder="e.g. Library Management System"
+      className="w-full rounded-lg border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-black"
+    />
+  </div>
 
-            <input
-              type="text"
-              value={formData.section}
-              onChange={(e) => updateField("section", e.target.value)}
-              placeholder="Section (e.g. A)"
-              className="rounded-lg border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-black"
-            />
+  {/* Subject */}
+  <div>
+    <label className="block text-sm font-medium text-gray-700 mb-1">
+      Subject
+    </label>
+    <input
+      type="text"
+      value={formData.subject}
+      onChange={(e) => updateField("subject", e.target.value)}
+      placeholder="e.g. Computer Science"
+      className="w-full rounded-lg border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-black"
+    />
+  </div>
 
-            <input
-              type="text"
-              value={formData.submittedTo}
-              onChange={(e) => updateField("submittedTo", e.target.value)}
-              placeholder="Submitted To (e.g. Dept. of Physics)"
-              className="rounded-lg border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-black"
-            />
-          </div>
+  {/* Course Name */}
+  <div>
+    <label className="block text-sm font-medium text-gray-700 mb-1">
+      Course Name
+    </label>
+    <input
+      type="text"
+      value={formData.courseName}
+      onChange={(e) => updateField("courseName", e.target.value)}
+      placeholder="e.g. Bachelor of Information Technology"
+      className="w-full rounded-lg border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-black"
+    />
+  </div>
+
+  {/* Semester */}
+  <div>
+    <label className="block text-sm font-medium text-gray-700 mb-1">
+      Semester
+    </label>
+    <input
+      type="text"
+      value={formData.sem}
+      onChange={(e) => updateField("sem", e.target.value)}
+      placeholder="e.g. First Semester"
+      className="w-full rounded-lg border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-black"
+    />
+  </div>
+
+  {/* Section */}
+  <div>
+    <label className="block text-sm font-medium text-gray-700 mb-1">
+      Section
+    </label>
+    <input
+      type="text"
+      value={formData.section}
+      onChange={(e) => updateField("section", e.target.value)}
+      placeholder="e.g. A"
+      className="w-full rounded-lg border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-black"
+    />
+  </div>
+
+  {/* Faculty Name */}
+  <div className="md:col-span-2">
+    <label className="block text-sm font-medium text-gray-700 mb-1">
+      Faculty Name
+    </label>
+    <input
+      type="text"
+      value={formData.submittedTo}
+      onChange={(e) => updateField("submittedTo", e.target.value)}
+      placeholder="Enter the name of your faculty teacher"
+      className="w-full rounded-lg border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-black"
+    />
+  </div>
+
+</div>
+
 
           {/* Number of Members */}
           <div className="mb-6">

@@ -5,16 +5,16 @@ import FrontPage from "../Components/FrontPage";
 
 const Home = () => {
 
-  const [formData, setFormData] = useState({
-    projectName: "",
-    subject: "",
-    className: "",
-    section: "",
-    submittedTo: "",
-    members: 1,
-    memberDetails: [{ name: "", symbol: "" }],
-  });
-
+ const [formData, setFormData] = useState({
+  projectName: "",
+  subject: "",
+  courseName: "",
+  sem: "",
+  section: "",
+  submittedTo: "",
+  members: 1,
+  memberDetails: [{ name: "", symbol: "" }],
+});
     const navigate = useNavigate();
 
   const handleGenerate = () => {
