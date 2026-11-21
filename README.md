@@ -1,16 +1,122 @@
-# React + Vite
+# Amrit Campus Front Page Maker
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple web-based academic front page generator for students of **Amrit Science Campus, Tribhuvan University**.
 
-Currently, two official plugins are available:
+Create professional front pages for lab reports, project reports, and academic assignments by entering your project details and student information. Preview the generated page and print it in A4 format.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## React Compiler
+- **Dynamic Front Page Generation** – Generate academic front pages using customizable project and academic details.
+- **Student Information** – Add multiple group members with their names and symbol numbers.
+- **Academic Details** – Enter project title, subject, course name, semester, section, and faculty name.
+- **Live Preview** – Preview the generated front page before printing.
+- **A4 Print Support** – Generate print-ready front pages with proper A4 dimensions and layout.
+- **Local Storage** – Automatically save submitted form data in the browser's local storage.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Tech Stack
 
-## Expanding the ESLint configuration
+- **React** – Frontend library
+- **Vite** – Development server and build tool
+- **Tailwind CSS** – Styling
+- **React Toastify** – Form validation notifications
+- **Local Storage API** – Client-side data persistence
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Getting Started
+
+Follow these instructions to run the project locally.
+
+### Prerequisites
+
+Make sure you have the following installed:
+
+- Node.js
+- npm
+
+### Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/Biploper/FrontPageMaker-ASCOL.git
+   ```
+
+2. Navigate to the project directory:
+
+   ```bash
+   cd FrontPageMaker-ASCOL
+   ```
+
+3. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+4. Start the development server:
+
+   ```bash
+   npm run dev
+   ```
+
+5. Open the local URL provided by Vite in your browser.
+
+## Production Build
+
+To generate an optimized production build:
+
+```bash
+npm run build
+```
+
+To preview the production build locally:
+
+```bash
+npm run preview
+```
+
+The production files will be generated inside the `dist/` directory.
+
+## Deployment
+
+The application can be deployed using [Netlify](https://www.netlify.com/).
+
+Connect the GitHub repository to Netlify and configure:
+
+| Setting | Value |
+|---|---|
+| Build command | `npm run build` |
+| Publish directory | `dist` |
+
+Netlify will automatically build and deploy the application whenever changes are pushed to the connected GitHub repository.
+
+## Project Structure
+
+```text
+.
+├── public/
+│   ├── _redirects
+│   └── logo.png
+├── src/
+│   ├── assets/
+│   ├── Components/
+│   ├── Pages/
+│   ├── App.jsx
+│   ├── App.css
+│   └── main.jsx
+├── index.html
+├── package.json
+└── vite.config.js
+```
+
+## Data & Privacy
+
+The application uses browser local storage to temporarily persist front page form data.
+
+- No account registration is required.
+- No backend database is required.
+- Form data stays in the user's browser.
+- Clearing browser storage may remove previously saved form data.
+
+## License
+
+This project is open-source. You are welcome to explore, modify, and adapt it for educational purposes.
